@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\petugas\LoanRequestController::index
  * @see app/Http/Controllers/Petugas/LoanRequestController.php:20
@@ -42,41 +42,6 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::index
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:20
- * @route '/pengajuanpeminjamans'
- */
-    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: index.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::index
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:20
- * @route '/pengajuanpeminjamans'
- */
-        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::index
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:20
- * @route '/pengajuanpeminjamans'
- */
-        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    index.form = indexForm
 /**
 * @see \App\Http\Controllers\petugas\LoanRequestController::create
  * @see app/Http/Controllers/Petugas/LoanRequestController.php:38
@@ -120,41 +85,6 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::create
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:38
- * @route '/pengajuanpeminjamans/create'
- */
-    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: create.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::create
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:38
- * @route '/pengajuanpeminjamans/create'
- */
-        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::create
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:38
- * @route '/pengajuanpeminjamans/create'
- */
-        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    create.form = createForm
 /**
 * @see \App\Http\Controllers\petugas\LoanRequestController::store
  * @see app/Http/Controllers/Petugas/LoanRequestController.php:46
@@ -189,27 +119,6 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::store
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:46
- * @route '/pengajuanpeminjamans'
- */
-    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: store.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::store
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:46
- * @route '/pengajuanpeminjamans'
- */
-        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: store.url(options),
-            method: 'post',
-        })
-    
-    store.form = storeForm
 /**
 * @see \App\Http\Controllers\petugas\LoanRequestController::show
  * @see app/Http/Controllers/Petugas/LoanRequestController.php:64
@@ -277,41 +186,6 @@ show.head = (args: { pengajuanpeminjaman: number | { id: number } } | [pengajuan
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::show
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:64
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}'
- */
-    const showForm = (args: { pengajuanpeminjaman: number | { id: number } } | [pengajuanpeminjaman: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: show.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::show
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:64
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}'
- */
-        showForm.get = (args: { pengajuanpeminjaman: number | { id: number } } | [pengajuanpeminjaman: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::show
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:64
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}'
- */
-        showForm.head = (args: { pengajuanpeminjaman: number | { id: number } } | [pengajuanpeminjaman: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    show.form = showForm
 /**
 * @see \App\Http\Controllers\petugas\LoanRequestController::edit
  * @see app/Http/Controllers/Petugas/LoanRequestController.php:75
@@ -374,41 +248,6 @@ edit.head = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjam
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::edit
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:75
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}/edit'
- */
-    const editForm = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: edit.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::edit
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:75
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}/edit'
- */
-        editForm.get = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::edit
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:75
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}/edit'
- */
-        editForm.head = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    edit.form = editForm
 /**
 * @see \App\Http\Controllers\petugas\LoanRequestController::update
  * @see app/Http/Controllers/Petugas/LoanRequestController.php:83
@@ -471,51 +310,6 @@ update.patch = (args: { pengajuanpeminjaman: string | number } | [pengajuanpemin
     method: 'patch',
 })
 
-    /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::update
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:83
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}'
- */
-    const updateForm = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: update.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'PUT',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::update
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:83
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}'
- */
-        updateForm.put = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PUT',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::update
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:83
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}'
- */
-        updateForm.patch = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PATCH',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    update.form = updateForm
 /**
 * @see \App\Http\Controllers\petugas\LoanRequestController::destroy
  * @see app/Http/Controllers/Petugas/LoanRequestController.php:91
@@ -568,38 +362,6 @@ destroy.delete = (args: { pengajuanpeminjaman: string | number } | [pengajuanpem
     url: destroy.url(args, options),
     method: 'delete',
 })
-
-    /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::destroy
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:91
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}'
- */
-    const destroyForm = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: destroy.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'DELETE',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\petugas\LoanRequestController::destroy
- * @see app/Http/Controllers/Petugas/LoanRequestController.php:91
- * @route '/pengajuanpeminjamans/{pengajuanpeminjaman}'
- */
-        destroyForm.delete = (args: { pengajuanpeminjaman: string | number } | [pengajuanpeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: destroy.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'DELETE',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    destroy.form = destroyForm
 const pengajuanpeminjamans = {
     index: Object.assign(index, index),
 create: Object.assign(create, create),

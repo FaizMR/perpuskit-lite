@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\Anggota\MyrequestController::index
  * @see app/Http/Controllers/Anggota/MyrequestController.php:21
@@ -42,41 +42,6 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::index
- * @see app/Http/Controllers/Anggota/MyrequestController.php:21
- * @route '/pengajuananggotas'
- */
-    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: index.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::index
- * @see app/Http/Controllers/Anggota/MyrequestController.php:21
- * @route '/pengajuananggotas'
- */
-        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::index
- * @see app/Http/Controllers/Anggota/MyrequestController.php:21
- * @route '/pengajuananggotas'
- */
-        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    index.form = indexForm
 /**
 * @see \App\Http\Controllers\Anggota\MyrequestController::create
  * @see app/Http/Controllers/Anggota/MyrequestController.php:0
@@ -120,41 +85,6 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::create
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/create'
- */
-    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: create.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::create
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/create'
- */
-        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::create
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/create'
- */
-        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    create.form = createForm
 /**
 * @see \App\Http\Controllers\Anggota\MyrequestController::store
  * @see app/Http/Controllers/Anggota/MyrequestController.php:40
@@ -189,27 +119,6 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::store
- * @see app/Http/Controllers/Anggota/MyrequestController.php:40
- * @route '/pengajuananggotas'
- */
-    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: store.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::store
- * @see app/Http/Controllers/Anggota/MyrequestController.php:40
- * @route '/pengajuananggotas'
- */
-        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: store.url(options),
-            method: 'post',
-        })
-    
-    store.form = storeForm
 /**
 * @see \App\Http\Controllers\Anggota\MyrequestController::show
  * @see app/Http/Controllers/Anggota/MyrequestController.php:54
@@ -277,41 +186,6 @@ show.head = (args: { pengajuananggota: number | { id: number } } | [pengajuanang
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::show
- * @see app/Http/Controllers/Anggota/MyrequestController.php:54
- * @route '/pengajuananggotas/{pengajuananggota}'
- */
-    const showForm = (args: { pengajuananggota: number | { id: number } } | [pengajuananggota: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: show.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::show
- * @see app/Http/Controllers/Anggota/MyrequestController.php:54
- * @route '/pengajuananggotas/{pengajuananggota}'
- */
-        showForm.get = (args: { pengajuananggota: number | { id: number } } | [pengajuananggota: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::show
- * @see app/Http/Controllers/Anggota/MyrequestController.php:54
- * @route '/pengajuananggotas/{pengajuananggota}'
- */
-        showForm.head = (args: { pengajuananggota: number | { id: number } } | [pengajuananggota: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    show.form = showForm
 /**
 * @see \App\Http\Controllers\Anggota\MyrequestController::edit
  * @see app/Http/Controllers/Anggota/MyrequestController.php:0
@@ -374,41 +248,6 @@ edit.head = (args: { pengajuananggota: string | number } | [pengajuananggota: st
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::edit
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/{pengajuananggota}/edit'
- */
-    const editForm = (args: { pengajuananggota: string | number } | [pengajuananggota: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: edit.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::edit
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/{pengajuananggota}/edit'
- */
-        editForm.get = (args: { pengajuananggota: string | number } | [pengajuananggota: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::edit
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/{pengajuananggota}/edit'
- */
-        editForm.head = (args: { pengajuananggota: string | number } | [pengajuananggota: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    edit.form = editForm
 /**
 * @see \App\Http\Controllers\Anggota\MyrequestController::update
  * @see app/Http/Controllers/Anggota/MyrequestController.php:0
@@ -471,51 +310,6 @@ update.patch = (args: { pengajuananggota: string | number } | [pengajuananggota:
     method: 'patch',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::update
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/{pengajuananggota}'
- */
-    const updateForm = (args: { pengajuananggota: string | number } | [pengajuananggota: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: update.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'PUT',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::update
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/{pengajuananggota}'
- */
-        updateForm.put = (args: { pengajuananggota: string | number } | [pengajuananggota: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PUT',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::update
- * @see app/Http/Controllers/Anggota/MyrequestController.php:0
- * @route '/pengajuananggotas/{pengajuananggota}'
- */
-        updateForm.patch = (args: { pengajuananggota: string | number } | [pengajuananggota: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PATCH',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    update.form = updateForm
 /**
 * @see \App\Http\Controllers\Anggota\MyrequestController::destroy
  * @see app/Http/Controllers/Anggota/MyrequestController.php:61
@@ -573,38 +367,6 @@ destroy.delete = (args: { pengajuananggota: number | { id: number } } | [pengaju
     url: destroy.url(args, options),
     method: 'delete',
 })
-
-    /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::destroy
- * @see app/Http/Controllers/Anggota/MyrequestController.php:61
- * @route '/pengajuananggotas/{pengajuananggota}'
- */
-    const destroyForm = (args: { pengajuananggota: number | { id: number } } | [pengajuananggota: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: destroy.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'DELETE',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\MyrequestController::destroy
- * @see app/Http/Controllers/Anggota/MyrequestController.php:61
- * @route '/pengajuananggotas/{pengajuananggota}'
- */
-        destroyForm.delete = (args: { pengajuananggota: number | { id: number } } | [pengajuananggota: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: destroy.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'DELETE',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    destroy.form = destroyForm
 const pengajuananggotas = {
     index: Object.assign(index, index),
 create: Object.assign(create, create),

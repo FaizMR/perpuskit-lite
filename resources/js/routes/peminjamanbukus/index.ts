@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\Anggota\BookLoanController::index
  * @see app/Http/Controllers/Anggota/BookLoanController.php:26
@@ -42,41 +42,6 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::index
- * @see app/Http/Controllers/Anggota/BookLoanController.php:26
- * @route '/peminjamanbukus'
- */
-    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: index.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::index
- * @see app/Http/Controllers/Anggota/BookLoanController.php:26
- * @route '/peminjamanbukus'
- */
-        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::index
- * @see app/Http/Controllers/Anggota/BookLoanController.php:26
- * @route '/peminjamanbukus'
- */
-        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    index.form = indexForm
 /**
 * @see \App\Http\Controllers\Anggota\BookLoanController::create
  * @see app/Http/Controllers/Anggota/BookLoanController.php:47
@@ -120,41 +85,6 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::create
- * @see app/Http/Controllers/Anggota/BookLoanController.php:47
- * @route '/peminjamanbukus/create'
- */
-    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: create.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::create
- * @see app/Http/Controllers/Anggota/BookLoanController.php:47
- * @route '/peminjamanbukus/create'
- */
-        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::create
- * @see app/Http/Controllers/Anggota/BookLoanController.php:47
- * @route '/peminjamanbukus/create'
- */
-        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    create.form = createForm
 /**
 * @see \App\Http\Controllers\Anggota\BookLoanController::store
  * @see app/Http/Controllers/Anggota/BookLoanController.php:55
@@ -189,27 +119,6 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::store
- * @see app/Http/Controllers/Anggota/BookLoanController.php:55
- * @route '/peminjamanbukus'
- */
-    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: store.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::store
- * @see app/Http/Controllers/Anggota/BookLoanController.php:55
- * @route '/peminjamanbukus'
- */
-        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: store.url(options),
-            method: 'post',
-        })
-    
-    store.form = storeForm
 /**
 * @see \App\Http\Controllers\Anggota\BookLoanController::show
  * @see app/Http/Controllers/Anggota/BookLoanController.php:91
@@ -277,41 +186,6 @@ show.head = (args: { peminjamanbuku: number | { id: number } } | [peminjamanbuku
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::show
- * @see app/Http/Controllers/Anggota/BookLoanController.php:91
- * @route '/peminjamanbukus/{peminjamanbuku}'
- */
-    const showForm = (args: { peminjamanbuku: number | { id: number } } | [peminjamanbuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: show.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::show
- * @see app/Http/Controllers/Anggota/BookLoanController.php:91
- * @route '/peminjamanbukus/{peminjamanbuku}'
- */
-        showForm.get = (args: { peminjamanbuku: number | { id: number } } | [peminjamanbuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::show
- * @see app/Http/Controllers/Anggota/BookLoanController.php:91
- * @route '/peminjamanbukus/{peminjamanbuku}'
- */
-        showForm.head = (args: { peminjamanbuku: number | { id: number } } | [peminjamanbuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    show.form = showForm
 /**
 * @see \App\Http\Controllers\Anggota\BookLoanController::edit
  * @see app/Http/Controllers/Anggota/BookLoanController.php:102
@@ -374,41 +248,6 @@ edit.head = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::edit
- * @see app/Http/Controllers/Anggota/BookLoanController.php:102
- * @route '/peminjamanbukus/{peminjamanbuku}/edit'
- */
-    const editForm = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: edit.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::edit
- * @see app/Http/Controllers/Anggota/BookLoanController.php:102
- * @route '/peminjamanbukus/{peminjamanbuku}/edit'
- */
-        editForm.get = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::edit
- * @see app/Http/Controllers/Anggota/BookLoanController.php:102
- * @route '/peminjamanbukus/{peminjamanbuku}/edit'
- */
-        editForm.head = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    edit.form = editForm
 /**
 * @see \App\Http\Controllers\Anggota\BookLoanController::update
  * @see app/Http/Controllers/Anggota/BookLoanController.php:110
@@ -471,51 +310,6 @@ update.patch = (args: { peminjamanbuku: string | number } | [peminjamanbuku: str
     method: 'patch',
 })
 
-    /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::update
- * @see app/Http/Controllers/Anggota/BookLoanController.php:110
- * @route '/peminjamanbukus/{peminjamanbuku}'
- */
-    const updateForm = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: update.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'PUT',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::update
- * @see app/Http/Controllers/Anggota/BookLoanController.php:110
- * @route '/peminjamanbukus/{peminjamanbuku}'
- */
-        updateForm.put = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PUT',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::update
- * @see app/Http/Controllers/Anggota/BookLoanController.php:110
- * @route '/peminjamanbukus/{peminjamanbuku}'
- */
-        updateForm.patch = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PATCH',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    update.form = updateForm
 /**
 * @see \App\Http\Controllers\Anggota\BookLoanController::destroy
  * @see app/Http/Controllers/Anggota/BookLoanController.php:118
@@ -568,38 +362,6 @@ destroy.delete = (args: { peminjamanbuku: string | number } | [peminjamanbuku: s
     url: destroy.url(args, options),
     method: 'delete',
 })
-
-    /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::destroy
- * @see app/Http/Controllers/Anggota/BookLoanController.php:118
- * @route '/peminjamanbukus/{peminjamanbuku}'
- */
-    const destroyForm = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: destroy.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'DELETE',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Anggota\BookLoanController::destroy
- * @see app/Http/Controllers/Anggota/BookLoanController.php:118
- * @route '/peminjamanbukus/{peminjamanbuku}'
- */
-        destroyForm.delete = (args: { peminjamanbuku: string | number } | [peminjamanbuku: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: destroy.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'DELETE',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    destroy.form = destroyForm
 const peminjamanbukus = {
     index: Object.assign(index, index),
 create: Object.assign(create, create),

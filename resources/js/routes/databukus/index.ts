@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\Admin\BookController::index
  * @see app/Http/Controllers/Admin/BookController.php:21
@@ -42,41 +42,6 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Admin\BookController::index
- * @see app/Http/Controllers/Admin/BookController.php:21
- * @route '/databukus'
- */
-    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: index.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Admin\BookController::index
- * @see app/Http/Controllers/Admin/BookController.php:21
- * @route '/databukus'
- */
-        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Admin\BookController::index
- * @see app/Http/Controllers/Admin/BookController.php:21
- * @route '/databukus'
- */
-        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    index.form = indexForm
 /**
 * @see \App\Http\Controllers\Admin\BookController::create
  * @see app/Http/Controllers/Admin/BookController.php:42
@@ -120,41 +85,6 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Admin\BookController::create
- * @see app/Http/Controllers/Admin/BookController.php:42
- * @route '/databukus/create'
- */
-    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: create.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Admin\BookController::create
- * @see app/Http/Controllers/Admin/BookController.php:42
- * @route '/databukus/create'
- */
-        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Admin\BookController::create
- * @see app/Http/Controllers/Admin/BookController.php:42
- * @route '/databukus/create'
- */
-        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    create.form = createForm
 /**
 * @see \App\Http\Controllers\Admin\BookController::store
  * @see app/Http/Controllers/Admin/BookController.php:50
@@ -189,27 +119,6 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\Admin\BookController::store
- * @see app/Http/Controllers/Admin/BookController.php:50
- * @route '/databukus'
- */
-    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: store.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Admin\BookController::store
- * @see app/Http/Controllers/Admin/BookController.php:50
- * @route '/databukus'
- */
-        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: store.url(options),
-            method: 'post',
-        })
-    
-    store.form = storeForm
 /**
 * @see \App\Http\Controllers\Admin\BookController::show
  * @see app/Http/Controllers/Admin/BookController.php:74
@@ -277,41 +186,6 @@ show.head = (args: { databuku: number | { id: number } } | [databuku: number | {
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Admin\BookController::show
- * @see app/Http/Controllers/Admin/BookController.php:74
- * @route '/databukus/{databuku}'
- */
-    const showForm = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: show.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Admin\BookController::show
- * @see app/Http/Controllers/Admin/BookController.php:74
- * @route '/databukus/{databuku}'
- */
-        showForm.get = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Admin\BookController::show
- * @see app/Http/Controllers/Admin/BookController.php:74
- * @route '/databukus/{databuku}'
- */
-        showForm.head = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    show.form = showForm
 /**
 * @see \App\Http\Controllers\Admin\BookController::edit
  * @see app/Http/Controllers/Admin/BookController.php:87
@@ -379,41 +253,6 @@ edit.head = (args: { databuku: number | { id: number } } | [databuku: number | {
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Admin\BookController::edit
- * @see app/Http/Controllers/Admin/BookController.php:87
- * @route '/databukus/{databuku}/edit'
- */
-    const editForm = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: edit.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Admin\BookController::edit
- * @see app/Http/Controllers/Admin/BookController.php:87
- * @route '/databukus/{databuku}/edit'
- */
-        editForm.get = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Admin\BookController::edit
- * @see app/Http/Controllers/Admin/BookController.php:87
- * @route '/databukus/{databuku}/edit'
- */
-        editForm.head = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    edit.form = editForm
 /**
 * @see \App\Http\Controllers\Admin\BookController::update
  * @see app/Http/Controllers/Admin/BookController.php:97
@@ -481,51 +320,6 @@ update.patch = (args: { databuku: number | { id: number } } | [databuku: number 
     method: 'patch',
 })
 
-    /**
-* @see \App\Http\Controllers\Admin\BookController::update
- * @see app/Http/Controllers/Admin/BookController.php:97
- * @route '/databukus/{databuku}'
- */
-    const updateForm = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: update.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'PUT',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Admin\BookController::update
- * @see app/Http/Controllers/Admin/BookController.php:97
- * @route '/databukus/{databuku}'
- */
-        updateForm.put = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PUT',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-            /**
-* @see \App\Http\Controllers\Admin\BookController::update
- * @see app/Http/Controllers/Admin/BookController.php:97
- * @route '/databukus/{databuku}'
- */
-        updateForm.patch = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PATCH',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    update.form = updateForm
 /**
 * @see \App\Http\Controllers\Admin\BookController::destroy
  * @see app/Http/Controllers/Admin/BookController.php:110
@@ -583,38 +377,6 @@ destroy.delete = (args: { databuku: number | { id: number } } | [databuku: numbe
     url: destroy.url(args, options),
     method: 'delete',
 })
-
-    /**
-* @see \App\Http\Controllers\Admin\BookController::destroy
- * @see app/Http/Controllers/Admin/BookController.php:110
- * @route '/databukus/{databuku}'
- */
-    const destroyForm = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: destroy.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'DELETE',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Admin\BookController::destroy
- * @see app/Http/Controllers/Admin/BookController.php:110
- * @route '/databukus/{databuku}'
- */
-        destroyForm.delete = (args: { databuku: number | { id: number } } | [databuku: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: destroy.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'DELETE',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    destroy.form = destroyForm
 const databukus = {
     index: Object.assign(index, index),
 create: Object.assign(create, create),

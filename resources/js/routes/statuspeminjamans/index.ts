@@ -1,4 +1,4 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\Petugas\LoanStatusController::index
  * @see app/Http/Controllers/Petugas/LoanStatusController.php:19
@@ -42,41 +42,6 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::index
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:19
- * @route '/statuspeminjamans'
- */
-    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: index.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::index
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:19
- * @route '/statuspeminjamans'
- */
-        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::index
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:19
- * @route '/statuspeminjamans'
- */
-        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    index.form = indexForm
 /**
 * @see \App\Http\Controllers\Petugas\LoanStatusController::create
  * @see app/Http/Controllers/Petugas/LoanStatusController.php:37
@@ -120,41 +85,6 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::create
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:37
- * @route '/statuspeminjamans/create'
- */
-    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: create.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::create
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:37
- * @route '/statuspeminjamans/create'
- */
-        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::create
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:37
- * @route '/statuspeminjamans/create'
- */
-        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    create.form = createForm
 /**
 * @see \App\Http\Controllers\Petugas\LoanStatusController::store
  * @see app/Http/Controllers/Petugas/LoanStatusController.php:45
@@ -189,27 +119,6 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::store
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:45
- * @route '/statuspeminjamans'
- */
-    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: store.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::store
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:45
- * @route '/statuspeminjamans'
- */
-        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: store.url(options),
-            method: 'post',
-        })
-    
-    store.form = storeForm
 /**
 * @see \App\Http\Controllers\Petugas\LoanStatusController::show
  * @see app/Http/Controllers/Petugas/LoanStatusController.php:53
@@ -277,41 +186,6 @@ show.head = (args: { statuspeminjaman: number | { id: number } } | [statuspeminj
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::show
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:53
- * @route '/statuspeminjamans/{statuspeminjaman}'
- */
-    const showForm = (args: { statuspeminjaman: number | { id: number } } | [statuspeminjaman: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: show.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::show
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:53
- * @route '/statuspeminjamans/{statuspeminjaman}'
- */
-        showForm.get = (args: { statuspeminjaman: number | { id: number } } | [statuspeminjaman: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::show
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:53
- * @route '/statuspeminjamans/{statuspeminjaman}'
- */
-        showForm.head = (args: { statuspeminjaman: number | { id: number } } | [statuspeminjaman: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    show.form = showForm
 /**
 * @see \App\Http\Controllers\Petugas\LoanStatusController::edit
  * @see app/Http/Controllers/Petugas/LoanStatusController.php:64
@@ -374,41 +248,6 @@ edit.head = (args: { statuspeminjaman: string | number } | [statuspeminjaman: st
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::edit
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:64
- * @route '/statuspeminjamans/{statuspeminjaman}/edit'
- */
-    const editForm = (args: { statuspeminjaman: string | number } | [statuspeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: edit.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::edit
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:64
- * @route '/statuspeminjamans/{statuspeminjaman}/edit'
- */
-        editForm.get = (args: { statuspeminjaman: string | number } | [statuspeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::edit
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:64
- * @route '/statuspeminjamans/{statuspeminjaman}/edit'
- */
-        editForm.head = (args: { statuspeminjaman: string | number } | [statuspeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    edit.form = editForm
 /**
 * @see \App\Http\Controllers\Petugas\LoanStatusController::update
  * @see app/Http/Controllers/Petugas/LoanStatusController.php:72
@@ -471,51 +310,6 @@ update.patch = (args: { statuspeminjaman: string | number } | [statuspeminjaman:
     method: 'patch',
 })
 
-    /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::update
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:72
- * @route '/statuspeminjamans/{statuspeminjaman}'
- */
-    const updateForm = (args: { statuspeminjaman: string | number } | [statuspeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: update.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'PUT',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::update
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:72
- * @route '/statuspeminjamans/{statuspeminjaman}'
- */
-        updateForm.put = (args: { statuspeminjaman: string | number } | [statuspeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PUT',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::update
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:72
- * @route '/statuspeminjamans/{statuspeminjaman}'
- */
-        updateForm.patch = (args: { statuspeminjaman: string | number } | [statuspeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PATCH',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    update.form = updateForm
 /**
 * @see \App\Http\Controllers\Petugas\LoanStatusController::destroy
  * @see app/Http/Controllers/Petugas/LoanStatusController.php:80
@@ -568,38 +362,6 @@ destroy.delete = (args: { statuspeminjaman: string | number } | [statuspeminjama
     url: destroy.url(args, options),
     method: 'delete',
 })
-
-    /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::destroy
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:80
- * @route '/statuspeminjamans/{statuspeminjaman}'
- */
-    const destroyForm = (args: { statuspeminjaman: string | number } | [statuspeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: destroy.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'DELETE',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\Petugas\LoanStatusController::destroy
- * @see app/Http/Controllers/Petugas/LoanStatusController.php:80
- * @route '/statuspeminjamans/{statuspeminjaman}'
- */
-        destroyForm.delete = (args: { statuspeminjaman: string | number } | [statuspeminjaman: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: destroy.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'DELETE',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    destroy.form = destroyForm
 const statuspeminjamans = {
     index: Object.assign(index, index),
 create: Object.assign(create, create),
