@@ -65,9 +65,7 @@ onMounted(async () => {
         console.error('Gagal mengambil kategori:', error);
     }
 });
-
 const value = ref<DateValue>();
-
 watch(value, (val) => {
     form.tanggal_terbit = val
         ? format(val.toDate(getLocalTimeZone()), 'yyyy-MM-dd')
