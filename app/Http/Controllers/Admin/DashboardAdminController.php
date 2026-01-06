@@ -14,28 +14,21 @@ class DashboardAdminController extends Controller
 {
     public function index()
     {
-<<<<<<< HEAD
-        return Inertia::render('admin/Dashboard', [
-=======
         return Inertia::render('Admin/Dashboard', [
-
->>>>>>> 6bbdfdb2eb6986c2fc19e09d76d2dda6629e4cc4
-            'stats' => [
-                'peminjaman' => [
-                    'dipinjam' => Loan::whereStatus('dipinjam')->count(),
-                    'dikembalikan' => Loan::whereStatus('dikembalikan')->count(),
-                    'terlambat' => Loan::whereStatus('terlambat')->count(),
-                    'rusak_hilang' => Loan::whereIn('status', ['rusak', 'hilang'])->count(),
-                ],
-                'buku' => [
-                    'total' => Book::count(),
-                    'paling_sering_dipinjam' => $this->mostBorrowedBook(),
-                ],
-                'pengguna' => [
-                    'total' => User::whereIn('level', ['anggota', 'petugas'])->count(),
-                    'petugas' => User::where('level', 'petugas')->count(),
-                    'anggota' => User::where('level', 'anggota')->count(),
-                ],
+            'peminjaman' => [
+                'dipinjam' => Loan::whereStatus('dipinjam')->count(),
+                'dikembalikan' => Loan::whereStatus('dikembalikan')->count(),
+                'terlambat' => Loan::whereStatus('terlambat')->count(),
+                'rusak_hilang' => Loan::whereIn('status', ['rusak', 'hilang'])->count(),
+            ],
+            'buku' => [
+                'total' => Book::count(),
+                'paling_sering_dipinjam' => $this->mostBorrowedBook(),
+            ],
+            'pengguna' => [
+                'total' => User::whereIn('level', ['anggota', 'petugas'])->count(),
+                'petugas' => User::where('level', 'petugas')->count(),
+                'anggota' => User::where('level', 'anggota')->count(),
             ],
             'recentTransactions' => $this->todayTransactions(),
             'topDenda' => $this->topDenda(),

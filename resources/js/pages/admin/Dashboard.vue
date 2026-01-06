@@ -24,22 +24,20 @@ const breadcrumbs: BreadcrumbItem[] = [
 // Components
 // =====================
 const props = defineProps<{
-    stats: {
-        peminjaman: {
-            dipinjam: number;
-            dikembalikan: number;
-            terlambat: number;
-            rusak_hilang: number;
-        };
-        buku: {
-            total: number;
-            paling_sering_dipinjam: Book | null;
-        };
-        pengguna: {
-            total: number;
-            petugas: number;
-            anggota: number;
-        };
+    peminjaman: {
+        dipinjam: number;
+        dikembalikan: number;
+        terlambat: number;
+        rusak_hilang: number;
+    };
+    buku: {
+        total: number;
+        paling_sering_dipinjam: Book | null;
+    };
+    pengguna: {
+        total: number;
+        petugas: number;
+        anggota: number;
     };
     recentTransactions: PengajuanPeminjaman[];
     topDenda: PengajuanPeminjaman[];
@@ -57,44 +55,44 @@ const props = defineProps<{
 const peminjaman = [
     {
         label: 'Total Dipinjam',
-        value: props.stats.peminjaman.dipinjam?.toString() || 'Null',
+        value: props.peminjaman.dipinjam?.toString() || 'Null',
     },
     {
         label: 'Telah Dikembalikan',
-        value: props.stats.peminjaman.dikembalikan?.toString() || 'Null',
+        value: props.peminjaman.dikembalikan?.toString() || 'Null',
     },
     {
         label: 'Terlambat',
-        value: props.stats.peminjaman.terlambat?.toString() || 'Null',
+        value: props.peminjaman.terlambat?.toString() || 'Null',
     },
 ];
 const Buku = [
     {
         label: 'Total Buku',
-        value: props.stats.buku.total?.toString() || 'Null',
+        value: props.buku.total?.toString() || 'Null',
     },
     {
         label: 'Sering Dipinjam',
         // value: bukuseringDipinjam.value,
-        value: props.stats.buku.paling_sering_dipinjam?.judul || 'Null',
+        value: props.buku.paling_sering_dipinjam?.judul || 'Null',
     },
     {
         label: 'Buku Rusak/Hilang',
-        value: props.stats.peminjaman.rusak_hilang?.toString() || 'Null',
+        value: props.peminjaman.rusak_hilang?.toString() || 'Null',
     },
 ];
 const Pengguna = [
     {
         label: 'Total Pengguna',
-        value: props.stats.pengguna.total?.toString() || 'Null',
+        value: props.pengguna.total?.toString() || 'Null',
     },
     {
         label: 'Total Petugas',
-        value: props.stats.pengguna.petugas?.toString() || 'Null',
+        value: props.pengguna.petugas?.toString() || 'Null',
     },
     {
         label: 'Total Anggota',
-        value: props.stats.pengguna.anggota?.toString() || 'Null',
+        value: props.pengguna.anggota?.toString() || 'Null',
     },
 ];
 function formatHari(hari: number): string {
