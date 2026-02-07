@@ -48,5 +48,8 @@ class AppServiceProvider extends ServiceProvider
             }
             return \App\Models\Loan::where('user_id', $user->id)->count() < 1;
         });
+        if (app()->environment('production')) {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
     }
 }
