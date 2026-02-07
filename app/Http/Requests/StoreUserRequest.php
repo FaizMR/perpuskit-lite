@@ -22,7 +22,7 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nik' => 'required|string',
+            'nik' => 'required|string|unique:users,nik',
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed|min:6',
@@ -37,6 +37,7 @@ class StoreUserRequest extends FormRequest
             'password.confirmed' => 'Konfirmasi password tidak cocok.',
             'profile_user.mimes' => 'File harus berupa JPG, JPEG, PNG, GIF, atau PDF.',
             'level.required' => 'Level harus admin, petugas, atau anggota.',
+            'nik.unique' => 'NIK yang anda masukkan salah',
         ];
     }
 }
