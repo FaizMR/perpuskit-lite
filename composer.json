@@ -9,6 +9,7 @@
     ],
     "license": "MIT",
     "require": {
+        "fakerphp/faker": "^1.23",
         "php": "^8.2",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/fortify": "^1.30",
