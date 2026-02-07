@@ -28,7 +28,8 @@ class User extends Authenticatable
         'password',
         'profile_user',
         'no_hp',
-        'plan'
+        'plan',
+        'level'
     ];
 
     /**
