@@ -18,14 +18,15 @@ class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            'judul' => $this->faker->sentence(4),
-            'penulis' => $this->faker->name,
-            'penerbit' => $this->faker->company,
-            'tanggal_terbit' => $this->faker->date('Y-m-d'),
-            'category_id' => \App\Models\Category::inRandomOrder()->first()->id,
-            'isbn' => $this->faker->isbn13,
-            'jumlah_halaman' => $this->faker->numberBetween(100, 500),
-            'deskripsi' => $this->faker->paragraph,
+            // Menggunakan helper fake() lebih aman daripada $this->faker
+            'judul'          => fake()->sentence(3),
+            'penulis'        => fake()->name(),
+            'penerbit'       => fake()->company(),
+            'tanggal_terbit' => fake()->date('Y-m-d'),
+            'category_id'    => \App\Models\Category::inRandomOrder()->first()?->id ?? 1,
+            'isbn'           => fake()->isbn13(),
+            'jumlah_halaman' => fake()->numberBetween(100, 500),
+            'deskripsi'      => fake()->paragraph(),
         ];
     }
 }
