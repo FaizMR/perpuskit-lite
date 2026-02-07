@@ -26,7 +26,6 @@ class UserService
                 'public'
             );
         }
-
         return User::create($data);
     }
 
@@ -72,7 +71,6 @@ class UserService
             // Pastikan tidak mengupdate kolom jika tidak ada file baru
             unset($data['profile_user']);
         }
-
         $user->update($data);
     }
 }
