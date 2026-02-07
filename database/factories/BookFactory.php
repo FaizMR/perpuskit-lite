@@ -18,7 +18,7 @@ class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            'judul' => $this->faker->judul,
+            'judul' => $this->faker->sentence(4),
             'penulis' => $this->faker->name,
             'penerbit' => $this->faker->company,
             'tanggal_terbit' => $this->faker->date('Y-m-d'),
