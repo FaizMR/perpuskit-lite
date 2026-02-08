@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 class Book extends Model
 {
     use HasFactory;
-    protected $table = 'categories';
+    protected $table = 'books';
     protected $fillable = [
         'judul',
         'penulis',
