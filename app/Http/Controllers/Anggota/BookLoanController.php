@@ -33,11 +33,9 @@ class BookLoanController  extends Controller
             ->category($request)
             ->paginate($request->get('perPage', 7))
             ->withQueryString();
-        dd($BookLoan);
 
         return Inertia::render('anggota/loan/Index', [
             'BookLoan' => $BookLoan,
-            'all_category_names' => Category::pluck('name')->toArray(),
             'filters' => $request->only('search', 'column', 'sortColumn', 'order', 'category', 'searchBy', 'perPage'),
         ]);
     }

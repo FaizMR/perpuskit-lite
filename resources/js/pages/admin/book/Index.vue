@@ -29,11 +29,17 @@ import {
 } from '@/components/ui/tooltip';
 import AppLayout from '@/layouts/app/AppSidebarLayout.vue';
 import { create, destroy, edit, index, show } from '@/routes/databukus';
-import { Book, BreadcrumbItem, PaginatedResponse } from '@/types/index';
+import {
+    Book,
+    BreadcrumbItem,
+    Category,
+    PaginatedResponse,
+} from '@/types/index';
 import { Link, router, usePage } from '@inertiajs/vue3';
 import { watchDebounced } from '@vueuse/core';
+import axios from 'axios';
 import { Eye, Pencil, Trash2 } from 'lucide-vue-next';
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -44,7 +50,6 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 const props = defineProps<{
     books: PaginatedResponse<Book>;
-    categories: string[];
 }>();
 
 const pagination = computed(() => ({
@@ -63,8 +68,14 @@ const pageProps = computed(() => {
         }) || {}
     );
 });
-const categoryOptions = computed(() => {
-    return props.categories;
+const categories = ref<Category[]>([]);
+onMounted(async () => {
+    try {
+        const response = await axios.get('/api/categories');
+        categories.value = response.data;
+    } catch (error) {
+        console.error('Gagal mengambil kategori:', error);
+    }
 });
 const searchQuery = ref(pageProps.value.search ?? '');
 const searchBy = ref(pageProps.value.searchBy ?? '');
@@ -221,11 +232,11 @@ const popoverOpen = ref(false);
                                                         -- Semua Kategori --
                                                     </option>
                                                     <option
-                                                        v-for="option in categoryOptions"
-                                                        :key="option"
-                                                        :value="option"
+                                                        v-for="category in categories"
+                                                        :key="category.id"
+                                                        :value="category.id"
                                                     >
-                                                        {{ option }}
+                                                        {{ category.name }}
                                                     </option>
                                                 </select>
                                                 <Label
