@@ -27,11 +27,11 @@ class BookController extends Controller
             ->category($request)
             ->paginate($request->get('perPage', 7))
             ->withQueryString();
-        dd($books);
+        // dd($books);
 
         return Inertia::render('admin/book/Index', [
             'books' => $books,
-            'categories' => Category::pluck('name'),
+            // 'categories' => Category::pluck('name'),
             'filters' => $request->only('search', 'column', 'perPage', 'category', 'searchBy'),
         ]);
     }
