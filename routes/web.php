@@ -2,20 +2,13 @@
 
 use App\Enums\LevelUser;
 use App\Http\Controllers\Admin\BookController;
-use App\Http\Controllers\Admin\LoanPaymentController;
-use App\Http\Controllers\Admin\ReturnBookController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\LoanExtensionRequestController;
-use App\Http\Controllers\Anggota\LoanListController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Anggota\BookLoanController;
-use App\Http\Controllers\Anggota\LoanHistoryController;
 use App\Http\Controllers\Anggota\MyrequestController;
-use App\Http\Controllers\Api\Anggota\PengajuanSayaController;
 use App\Http\Controllers\petugas\LoanRequestController;
 use App\Http\Controllers\Petugas\LoanStatusController;
 use App\Http\Controllers\PreviewController;
-use App\Http\Controllers\RiwayatPeminjamanController;
 use App\Http\Controllers\SelectCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
