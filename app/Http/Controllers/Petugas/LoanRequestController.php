@@ -25,7 +25,6 @@ class LoanRequestController  extends Controller
             ->sort($request->sortColumn, $request->order)
             ->paginate($request->get('perPage', 7))
             ->withQueryString();
-        dd($LoanRequest);
         return Inertia::render('petugas/loanrequest/Index', [
             'LoanRequest' => $LoanRequest,
             'filters' => $request->only('search', 'column', 'sortColumn', 'order', 'searchBy', 'perPage')
