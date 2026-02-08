@@ -27,6 +27,7 @@ class BookController extends Controller
             ->category($request)
             ->paginate($request->get('perPage', 7))
             ->withQueryString();
+        dd($books);
 
         return Inertia::render('admin/book/Index', [
             'books' => $books,
