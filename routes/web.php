@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Anggota\BookLoanController;
 use App\Http\Controllers\Anggota\MyrequestController;
-use App\Http\Controllers\petugas\LoanRequestController;
+use App\Http\Controllers\Petugas\LoanRequestController;
 use App\Http\Controllers\Petugas\LoanStatusController;
 use App\Http\Controllers\PreviewController;
 use App\Http\Controllers\SelectCategory;
